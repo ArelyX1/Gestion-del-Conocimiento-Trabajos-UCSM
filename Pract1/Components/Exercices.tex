@@ -1,0 +1,345 @@
+\subsection*{\textbf{Ejercicios Propuestos}}
+
+\subsubsection*{\textit{\textbf{Ejercicio 1: Validación de Notas mediante Triggers}}}
+
+Se creó una base de datos llamada \texttt{test} con una tabla \texttt{alumnos} conteniendo las columnas: \texttt{id}, \texttt{nombre}, \texttt{apellido1}, \texttt{apellido2} y \texttt{nota}. Se implementaron dos triggers: \texttt{triggerchecknotabeforeinsert} que valida las notas antes de insertar registros, asegurando que valores negativos se guarden como 0 y valores mayores a 10 se guarden como 10, y \texttt{triggerchecknotabeforeupdate} que aplica la misma validación durante operaciones de actualización.
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-13-33.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-16-13.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Trigger triggerchecknotabeforeinsert}}}
+
+Se creó el trigger \texttt{triggerchecknotabeforeinsert} que se ejecuta antes de insertar registros en la tabla \texttt{alumnos}, verificando que la nota sea un valor entre 0 y 10.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-27-27.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-28-11.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+
+\subsubsection*{\textit{\textbf{Trigger triggerchecknotabeforeupdate}}}
+
+Se creó el trigger \texttt{triggerchecknotabeforeupdate} que se ejecuta antes de actualizar registros en la tabla \texttt{alumnos}, aplicando la misma validación de rango de notas.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-29-12.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-30-18.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+
+\subsubsection*{\textit{\textbf{Pruebas de Inserción con Notas Válidas e Inválidas}}}
+
+Se realizaron múltiples inserciones de registros de alumnos con notas dentro del rango válido (0-10) así como con valores negativos y mayores a 10, verificando que los triggers validaran correctamente.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de inserción válida}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-32-12.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de inserción inválida}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-36-07.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de inserción}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-42-05.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+
+\subsubsection*{\textit{\textbf{Pruebas de Actualización con Validación de Notas}}}
+
+Se realizaron actualizaciones de registros de alumnos con valores de notas fuera del rango permitido, verificando que el trigger \texttt{triggerchecknotabeforeupdate} corrigiera automáticamente los valores.
+
+
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de actualización válida}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-44-26.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de actualización inválida}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-45-21.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Prueba de actualización}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-46-15.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+\subsubsection*{\textit{\textbf{Verificación de Datos en la Tabla alumnos}}}
+
+Se consultó la tabla \texttt{alumnos} para verificar que todos los valores de notas estuvieran dentro del rango válido (0-10), demostrando el correcto funcionamiento de los triggers.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Verificacion de la tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-49-03.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Verificacion de la tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-49-36.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Ejercicio 2: Generación Automática de Email mediante Procedimiento y Trigger}}}
+
+Se creó una base de datos llamada \texttt{test} con una tabla \texttt{alumnos} conteniendo las columnas: \texttt{id}, \texttt{nombre}, \texttt{apellido1}, \texttt{apellido2} y \texttt{email}. Se implementó un procedimiento almacenado \texttt{crearemail} que genera direcciones de correo electrónico automáticamente.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-51-25.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Creación de la base de datos test y tabla alumnos}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-52-24.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Procedimiento Almacenado crearemail}}}
+
+Se creó el procedimiento almacenado \texttt{crearemail} que recibe como parámetros de entrada \texttt{nombre}, \texttt{apellido1}, \texttt{apellido2} y \texttt{dominio}, generando una dirección de correo con el formato: primer carácter del nombre, tres primeros caracteres de apellido1, tres primeros caracteres de apellido2, punto y dominio.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Procedimiento Almacenado crearemail}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-53-22.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Procedimiento Almacenado crearemail}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-54-23.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Pruebas del Procedimiento crearemail}}}
+
+Se realizaron pruebas del procedimiento \texttt{crearemail} con diferentes combinaciones de nombres, apellidos y dominios, verificando que generara correctamente las direcciones de correo electrónico.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Pruebas del Procedimiento crearemail}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-02-56-18.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Pruebas del Procedimiento crearemail}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-03-00-25.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Trigger triggercrearemailbeforeinsert}}}
+
+Se creó el trigger \texttt{triggercrearemailbeforeinsert} que se ejecuta antes de insertar registros en la tabla \texttt{alumnos}. Si el email es \texttt{NULL}, el trigger automáticamente invoca el procedimiento \texttt{crearemail} para generar una dirección de correo; de lo contrario, inserta el email proporcionado.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggercrearemailbeforeinsert}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-03-02-25.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggercrearemailbeforeinsert}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-03-02-54.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Ejercicio 3: Registro de Cambios de Email mediante Trigger}}}
+
+Se modificó el ejercicio anterior agregando un nuevo trigger \texttt{triggerguardaremailafterupdate} que registra cada cambio de email en una tabla de auditoría llamada \texttt{logcambiosemail}.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Cambio la base de datos test}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-24-58.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Cambio a la base de datos test}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-26-43.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Trigger triggerguardaremailafterupdate}}}
+
+Se creó el trigger \texttt{triggerguardaremailafterupdate} que se ejecuta después de actualizar un email en la tabla \texttt{alumnos}, insertando automáticamente un registro en \texttt{logcambiosemail} con los valores anterior y nuevo del email, junto con la fecha y hora del cambio.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggerguardaremailafterupdate}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-27-27.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggerguardaremailafterupdate}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-28-27.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+
+\subsubsection*{\textit{\textbf{Ejercicio 4: Registro de Alumnos Eliminados mediante Trigger}}}
+
+Se modificó el ejercicio anterior agregando un nuevo trigger \texttt{triggerguardaralumnoseliminados} que registra la información de alumnos eliminados en una tabla de auditoría llamada \texttt{logalumnoseliminados}.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Cambios de la base de datos test}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-29-51.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Cambios de la base de datos test}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-31-05.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}
+
+\subsubsection*{\textit{\textbf{Trigger triggerguardaralumnoseliminados}}}
+
+Se creó el trigger \texttt{triggerguardaralumnoseliminados} que se ejecuta después de eliminar un registro de la tabla \texttt{alumnos}, insertando automáticamente en \texttt{logalumnoseliminados} los datos del alumno eliminado incluyendo id, nombre, apellidos, email y fecha y hora de la eliminación.
+
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggerguardaralumnoseliminados}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-31-38.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en DBeaver.
+\end{figure}
+
+\begin{figure}[H]
+    \centering  
+    \caption{Trigger triggerguardaralumnoseliminados}
+    \includegraphics[width=0.8\linewidth]{media/FigExercises/2025-11-13-05-32-42.png}
+    \label{fig:BD test alumnos}\\
+    \vspace{0.5em}
+    \small \textit{Nota.} Realizado en MySQL modo consola.
+\end{figure}

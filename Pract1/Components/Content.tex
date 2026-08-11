@@ -1,0 +1,33 @@
+%\hypertarget{actividades}{} 
+
+%\section*{\centering \textbf{Actividades}}
+%\addcontentsline{toc}{section}
+%{\protect \numberline{I. }Actividades} 
+% \rule{\textwidth}{0.4pt} % Línea horizontal 
+%\label{intro}
+%\input{Components/Activities}
+
+
+\input{Components/abstract.tex}
+
+\section{Introducción}
+\label{intro}
+La creciente complejidad de los sistemas de software modernos exige que los estudiantes de ingeniería no solo comprendan la teoría del testing, sino que también desarrollen habilidades prácticas para identificar fallos en entornos dinámicos y distribuidos. En este contexto, el uso de plataformas de desarrollo de juegos como Roblox Studio ofrece una oportunidad única para simular arquitecturas cliente-servidor reales donde los errores de lógica y sincronización son comunes. El presente informe detalla la implementación de un mini-juego educativo, denominado \"Shop \& Jump Simulator (Bug Edition)\", que integra módulos de estadísticas de jugador, sistemas de tiendas y mecánicas de salto, todos ellos vinculados a un motor de economía que presenta comportamientos erráticos diseñados para el aprendizaje \cite{ucsm}.
+
+Para elevar este ejercicio a un estándar profesional de ingeniería, el flujo de trabajo se integró con Visual Studio Code utilizando Dev Containers, lo que permitió un entorno de desarrollo estandarizado y aislado para la ejecución de pruebas. El núcleo de la validación técnica se apoyó en el plugin Busted Test Explorer, facilitando la gestión y visualización de los tests unitarios y de integración de manera eficiente. Este enfoque permitió explorar cómo pequeñas fallas en el código de un módulo, como la falta de validación de fondos en el ShopSystem, pueden escalar hasta corromper el flujo completo de la aplicación, obligando al evaluador a transitar desde la observación empírica del testing manual hasta la rigurosidad técnica de la automatización.
+
+Finalmente, el proyecto busca cerrar la brecha entre el aula y la industria mediante la simulación de un ciclo de vida de desarrollo de software colaborativo. Al dividir a los participantes en roles de testing manual, automatización y desarrollo de backend, se fomenta un entorno donde la resolución de conflictos de integración y la gestión de regresiones son elementos centrales del aprendizaje. La introducción de bugs distribuidos asegura que los estudiantes comprendan que el cliente no es una fuente confiable y que la validación en el servidor es indispensable para garantizar la integridad de cualquier sistema multiusuario.
+
+
+\section{Módulos iniciales del proyecto}
+\label{workflow}
+\input{Components/Actividades.tex}
+
+\section{Conclusiones}
+\label{conclusiones}
+
+\begin{enumerate}
+    \item El desarrollo de un entorno educativo gamificado en Roblox Studio ha demostrado ser una estrategia efectiva para enseñar metodologías de aseguramiento de calidad de software (QA) a estudiantes de ingeniería. La implementación de errores lógicos intencionales en los subsistemas permitió a los alumnos experimentar con fallos reales y desarrollar habilidades diagnósticas críticas.
+    \item La integración de Visual Studio Code con Dev Containers y el uso del plugin Busted Test Explorer facilitó la transición entre el testing manual y la automatización, proporcionando un entorno de desarrollo estandarizado y eficiente para la ejecución de pruebas. Esto permitió a los estudiantes comprender la importancia de la validación en el servidor y la gestión de errores en sistemas distribuidos, reforzando su capacidad para identificar y resolver vulnerabilidades críticas en aplicaciones multiusuario.
+    \item La simulación de un ciclo de vida de desarrollo de software colaborativo, con roles específicos para testing manual, automatización y desarrollo de backend, fomentó un entorno de aprendizaje dinámico se pudo experimentar con la resolución de conflictos de integración y la gestión de regresiones, preparando a los estudiantes para enfrentar desafíos reales en la industria del software.
+\end{enumerate}
